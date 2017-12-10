@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>实验室</title>
+    <style type="text/css">
+        table{
+            border:1px solid;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+<table id="tb" >
+    <tr>
+        <td></td>
+    </tr>
+</table>
+</div>
+<form>
+    <input type="text" id="txt">
+    <input type="button" id="btn" value="提交" onclick="getContent()">
+</form>
+<script>
+    var table = [];
+    function getContent() {
+        var txt = document.getElementById("txt").value;
+        table.push(txt);
+        var string = "";
+        for(var i=0; i<table.length; i++){
+            string = string + "<table><tr><td>"+table[i]+"</td></tr></table>";
+        }
+        document.getElementById("div1").innerHTML= string;
+    }
+
+</script>
+</body>
+</html>
